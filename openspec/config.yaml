@@ -1,0 +1,30 @@
+schema: spec-driven
+
+context: |
+  Single-user, read-only personal net worth application. Read AGENTS.md and docs/architecture.md first.
+  Stack is locked: Python 3.12, Plaid via a provider adapter, DuckDB, plain SQL plus Python on cron or GitHub Actions, Streamlit.
+  Phase 1 only (local, free). Databricks is phase 2 and Claude plus MCP is phase 3.
+  Money is Decimal. Assets positive, liabilities negative. Never use real financial data in code, tests or fixtures.
+  Out of scope: moving money, trading, multi-user, public hosting, financial advice.
+
+rules:
+  proposal:
+    - State what is out of scope.
+    - State the security and privacy impact, including any new data leaving the machine.
+    - State the phase the change belongs to.
+  design:
+    - Reference docs/architecture.md and justify any deviation from the locked stack.
+  specs:
+    - Every requirement needs at least one scenario.
+  tasks:
+    - Break tasks into chunks of at most 2 hours.
+    - Include a test task for each requirement.
+
+operations:
+  apply:
+    guidance:
+      - Implement only the listed tasks. Do not widen scope.
+      - Use the Plaid sandbox and synthetic fixtures only.
+  archive:
+    guidance:
+      - Summarize the archive outcome before finishing.
